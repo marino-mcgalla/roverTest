@@ -65,18 +65,18 @@ function moveRover(upperCoord, initCoord, orientation, instructions) {
                 orientation += 1;
             }
         }
-
+        //checks that movement won't move rover out of bounds, then performs movement command
         else if (instructions[i] == "M") {
-            if (orientation == 0 /*E*/) {
+            if (orientation == 0 /*E*/ && initCoord[0] + 1 <= upperCoord[0]) {
                 initCoord[0] += 1;
             }
-            else if (orientation == 2 /*W*/) {
+            else if (orientation == 2 /*W*/ && initCoord[0] - 1 >= 0) {
                 initCoord[0] -= 1;
             }
-            else if (orientation == 1 /*S*/) {
+            else if (orientation == 1 /*S*/ && initCoord[1] - 1 >= 0) {
                 initCoord[1] -= 1;
             }
-            else if (orientation == 3 /*N*/) {
+            else if (orientation == 3 /*N*/ && initCoord[1] + 1 <= upperCoord[1]) {
                 initCoord[1] += 1;
             }
         }
