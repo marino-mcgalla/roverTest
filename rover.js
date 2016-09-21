@@ -4,11 +4,15 @@
     var input2 = prompt("Where is your rover currently located and what is its oritentation?");
     var input3 = prompt("Great! Ready for movement instructions!");
 
+    //array of cardinal directions, allows for "rotating" through directions using indexOf method
+    var cardinalArray = ["E", "S", "W", "N"];
+
     //parses string of coordinates to integers to be manipulated by movement instructions
     var upperCoord = parseCoordinates(input2);
 
-    //grabs the orientation indicator (letter) from input 2
-    var orientation = getOrientation(input2);
+    //gets the orientation using getOrientation (letter) and then gets the index of that character from the cardinals array
+    var orientation = cardinalArray.indexOf(getOrientation(input2));
+    console.log(orientation);
 
 }
 
