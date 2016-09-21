@@ -3,9 +3,15 @@
     var input1 = prompt("Greetings, astronaut! What are the upper-right coordinates your rover will be traveling today?");
     var input2 = prompt("Where is your rover currently located and what is its oritentation?");
     var input3 = prompt("Great! Ready for movement instructions!");
+
     //parses string of coordinates to integers to be manipulated by movement instructions
     var upperCoord = parseCoordinates(input2);
+
+    //grabs the orientation indicator (letter) from input 2
+    var orientation = getOrientation(input2);
+
 }
+
 
 //parses the first 2 characters of input. If there is a third(orientation) it is removed
 function parseCoordinates(coordString) {
@@ -22,3 +28,10 @@ function parseCoordinates(coordString) {
     //return array of parsed integers
     return coordInts;
 }
+
+//accepts input of coordinate and orientation, returns only the orientation
+function getOrientation(orientString) {
+    var splitArray = orientString.split(' ');
+    return splitArray[2];
+}
+
