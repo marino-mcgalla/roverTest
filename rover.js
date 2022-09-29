@@ -11,13 +11,10 @@ function roverProgram() {
     var upperCoord = parseCoordinates(input1);
     var initCoord = parseCoordinates(input2);
 
-    //gets the orientation using getOrientation (letter) and then gets the index of that character from the cardinals array
     var orientation = cardinalArray.indexOf(getOrientation(input2));
 
-    //splits instruction input string into an array of individual instructions that can be looped through
     var instructArray = input3.split('');
 
-    //performs movement instructions and prints final coordinates and orientation to the console
     moveRover(upperCoord, initCoord, orientation, instructArray);
 }
 
